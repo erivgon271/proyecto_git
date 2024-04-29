@@ -1,0 +1,19 @@
+title = "gitleaks config"
+
+[allowlist]
+description = "allowlists"
+regexes = [
+	'''PASSWORD_GOES_HERE''',
+    '''PLACEHOLDER_FOR_PASSWORD''',
+    '''<YourStrong!Passw0rd>''',
+    '''__AntiXsrfToken''',
+    '''SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED'''
+]
+paths = [
+	'''(.*?)(jpg|gif|doc|pdf|bin|toml)$'''
+]
+
+[[rules]]
+description = "Creds in text files"
+regex = '''(i?)Secret'''
+path = "(i?)txt"
